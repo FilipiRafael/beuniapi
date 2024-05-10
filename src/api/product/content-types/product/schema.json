@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "supplier": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::supplier.supplier",
+      "inversedBy": "products"
+    },
+    "record_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "public_id": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "default": "Ativo"
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "image_url": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "stock": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
