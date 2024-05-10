@@ -846,13 +846,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     record_id: Attribute.String & Attribute.Required & Attribute.Unique;
     public_id: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
     status: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Ativo'>;
     price: Attribute.Float & Attribute.Required;
     image_url: Attribute.String & Attribute.Required;
-    stock: Attribute.Integer & Attribute.Required;
+    stock: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<100>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
